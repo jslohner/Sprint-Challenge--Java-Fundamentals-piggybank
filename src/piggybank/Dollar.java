@@ -31,6 +31,10 @@ public class Dollar extends AbstractMoney {
 		return quantity * faceValue;
 	}
 
+	public String getTotalString() {
+		return "$" + String.format("%.2f", quantity * faceValue);
+	}
+
 	@Override
 	public String toString() {
 		return "$" + quantity;

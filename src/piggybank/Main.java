@@ -3,6 +3,30 @@ package piggybank;
 import java.util.*;
 
 public class Main {
+	private static void welcomeMessage() {
+		System.out.println("*** Welcome to Your Piggy Bank ***");
+		System.out.println();
+	}
+
+	private static void piggyBankMessage() {
+		System.out.println("*** Money Info ***");
+
+		AbstractMoney[] typesOfMoney = new AbstractMoney[5];
+		typesOfMoney[0] = new Dollar();
+		typesOfMoney[1] = new Quarter();
+		typesOfMoney[2] = new Dime();
+		typesOfMoney[3] = new Nickel();
+		typesOfMoney[4] = new Penny();
+
+		int id = 1;
+		for (AbstractMoney m : typesOfMoney) {
+			System.out.println(id + ") " + m.getType() + " || Face Value - " + m.getFaceValueString());
+			id++;
+		}
+
+		System.out.println();
+	}
+
 	private static double getTotalMoney(List<AbstractMoney> piggyBank) {
 		double total = 0;
 		for (AbstractMoney m : piggyBank) {
@@ -12,6 +36,7 @@ public class Main {
 	}
 
 	private static void workWithPiggyBank() {
+
 		List<AbstractMoney> piggyBank = new ArrayList<>();
 
 		piggyBank.add(new Quarter());
@@ -23,8 +48,8 @@ public class Main {
 		piggyBank.add(new Penny(10));
 
 		for (AbstractMoney m : piggyBank) {
-			System.out.println(m);
-			System.out.println(m.getFaceValueString());
+			System.out.println(m + " added to piggy bank.");
+			System.out.println("Value - " + m.getTotalString());
 			System.out.println();
 		}
 
@@ -34,6 +59,8 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+		welcomeMessage();
+		piggyBankMessage();
 		workWithPiggyBank();
 	}
 }
