@@ -24,7 +24,10 @@ public class Main {
 
 		for (AbstractMoney m : piggyBank) {
 			System.out.println(m);
+			System.out.println(m.getFaceValueString());
+			System.out.println();
 		}
+
 
 		String total = String.format("%.2f", getTotalMoney(piggyBank));
 		System.out.println("The piggy bank holds $" + total);

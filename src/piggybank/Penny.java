@@ -23,6 +23,10 @@ public class Penny extends AbstractMoney {
 		return faceValue;
 	}
 
+	public String getFaceValueString() {
+		return "$" + String.format("%.2f", faceValue);
+	}
+
 	public double getTotal() {
 		return quantity * faceValue;
 	}

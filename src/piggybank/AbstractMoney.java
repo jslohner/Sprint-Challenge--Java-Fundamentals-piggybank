@@ -15,6 +15,7 @@ abstract class AbstractMoney {
 
 	abstract String getType();
 	abstract double getFaceValue();
+	abstract String getFaceValueString();
 	abstract double getTotal();
 
 	long getQuantity() {
