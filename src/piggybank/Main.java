@@ -27,32 +27,52 @@ public class Main {
 		System.out.println();
 	}
 
-	private static double getTotalMoney(List<AbstractMoney> piggyBank) {
+	private static Map<String, Double> piggyBankBalance(List<AbstractMoney> piggyBankTransactions) {
+		System.out.println("*** Piggy Bank Balance ***");
+		Map<String, Double> piggyBank = new HashMap<>();
+		for (AbstractMoney m : piggyBankTransactions) {
+			if (piggyBank.containsKey(m.getType())) {
+				piggyBank.put(m.getType(), (piggyBank.get(m.getType()) + m.getTotal()));
+			} else {
+				piggyBank.put(m.getType(), m.getTotal());
+			}
+		}
+
+		for (String m : piggyBank.keySet()) {
+			System.out.println(m + " balance - $" + String.format("%.2f", piggyBank.get(m)));
+		}
+		System.out.println();
+
+		return piggyBank;
+	}
+
+	private static double getTotalMoney(Map<String, Double> piggyBank) {
 		double total = 0;
-		for (AbstractMoney m : piggyBank) {
-			total += m.getTotal();
+		for (double m : piggyBank.values()) {
+			total += m;
 		}
 		return total;
 	}
 
 	private static void workWithPiggyBank() {
+		System.out.println("*** Piggy Bank Transactions ***");
+		List<AbstractMoney> piggyBankTransactions = new ArrayList<>();
 
-		List<AbstractMoney> piggyBank = new ArrayList<>();
+		piggyBankTransactions.add(new Quarter());
+		piggyBankTransactions.add(new Dime());
+		piggyBankTransactions.add(new Dollar(5));
+		piggyBankTransactions.add(new Nickel(3));
+		piggyBankTransactions.add(new Dime(7));
+		piggyBankTransactions.add(new Dollar());
+		piggyBankTransactions.add(new Penny(10));
 
-		piggyBank.add(new Quarter());
-		piggyBank.add(new Dime());
-		piggyBank.add(new Dollar(5));
-		piggyBank.add(new Nickel(3));
-		piggyBank.add(new Dime(7));
-		piggyBank.add(new Dollar());
-		piggyBank.add(new Penny(10));
-
-		for (AbstractMoney m : piggyBank) {
+		for (AbstractMoney m : piggyBankTransactions) {
 			System.out.println(m + " added to piggy bank.");
 			System.out.println("Value - " + m.getTotalString());
 			System.out.println();
 		}
 
+		Map<String, Double> piggyBank = piggyBankBalance(piggyBankTransactions);
 
 		String total = String.format("%.2f", getTotalMoney(piggyBank));
 		System.out.println("The piggy bank holds $" + total);
@@ -64,11 +84,3 @@ public class Main {
 		workWithPiggyBank();
 	}
 }
-
-// `1 Quarter`
-// `1 Dime`
-// `$5`
-// `3 Nickels`
-// `7 Dimes`
-// `$1`
-// `10 Pennies`
