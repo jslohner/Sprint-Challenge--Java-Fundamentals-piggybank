@@ -25,9 +25,16 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Describe why Java is called an object oriented, strongly typed language.
+Java is an object oriented language because you create classes and objects with those classes, and then you interact with those objects. Being strongly typed means that everything in Java has a type, and only that type of data can be stored in that place in memory for example the variable - int example - is a variable named example of type int.
+
 2. Give examples of Java Collections explaining the use and differences between them.
+A few different examples of Java collections are - Array, ArrayList, HashMap, HashSet. Collections are used to store related data in the same place, so that you can work with a lot of data more easily.
+
 3. What is recursion and how does it differ from regular looping?
+A recursive function is a function that calls itself continuously until it reaches a "base case" or basically where it is told to stop. This is different from regular looping because instead of the programmer explicitly defining the loop, we just write the recursive function and have that run until it reaches the "base case".
+
 4. Explain the differences between Abstract Classes and Interfaces including scenarios of when to use them.
+Abstract classes are parent classes defined for the purpose of creating multiple closely related classes that all will have a similar lay out. Interfaces are more used for classes that aren't as similar that all have some kind of common functionality. A good use of abstract classes could be if you have multiple car brand classes such as - Ford, VW, and Mitsubishi. You could make an abstract car class that each brand of car will share because cars all have a lot of similarities even though brands differ. An interface could be used for something such as having different people classes, car classes, and animal classes. They all need some sort of consume and regenerate energy function that an interface could provide, but they wouldn't all have the same overall class structure.
 
 ## Instructions
 
