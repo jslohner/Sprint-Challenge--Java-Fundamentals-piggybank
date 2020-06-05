@@ -65,6 +65,13 @@ public class Main {
 		piggyBankTransactions.add(new Dime(7));
 		piggyBankTransactions.add(new Dollar());
 		piggyBankTransactions.add(new Penny(10));
+		piggyBankTransactions.add(new Quarter());
+		piggyBankTransactions.add(new Dime());
+		piggyBankTransactions.add(new Dollar(5));
+		piggyBankTransactions.add(new Nickel(3));
+		piggyBankTransactions.add(new Dime(7));
+		piggyBankTransactions.add(new Dollar());
+		piggyBankTransactions.add(new Penny(10));
 
 		for (AbstractMoney m : piggyBankTransactions) {
 			System.out.println(m + " added to piggy bank.");
