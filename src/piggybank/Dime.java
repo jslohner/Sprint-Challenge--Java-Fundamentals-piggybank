@@ -22,4 +22,9 @@ public class Dime extends AbstractMoney {
 	public double getFaceValue() {
 		return faceValue;
 	}
+
+	@Override
+	public String toString() {
+		return quantity + " " + (quantity > 1 ? type + "s" : type);
+	}
 }

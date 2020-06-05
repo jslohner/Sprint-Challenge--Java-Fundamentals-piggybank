@@ -22,4 +22,9 @@ public class Penny extends AbstractMoney {
 	public double getFaceValue() {
 		return faceValue;
 	}
+
+	@Override
+	public String toString() {
+		return quantity + " " + (quantity > 1 ?  "Pennies" : type);
+	}
 }
