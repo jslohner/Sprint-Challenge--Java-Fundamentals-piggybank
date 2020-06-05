@@ -23,6 +23,10 @@ public class Nickel extends AbstractMoney {
 		return faceValue;
 	}
 
+	public double getTotal() {
+		return quantity * faceValue;
+	}
+
 	@Override
 	public String toString() {
 		return quantity + " " + (quantity > 1 ? type + "s" : type);
