@@ -1,8 +1,8 @@
 package piggybank;
 
 abstract class AbstractMoney {
-	protected String type;
-	protected double faceValue;
+	// protected String type;
+	// protected double faceValue;
 	protected long quantity;
 
 	public AbstractMoney() {
@@ -24,10 +24,10 @@ abstract class AbstractMoney {
 		this.quantity = quantity;
 	}
 
-	@Override
-	public String toString() {
-		return "Total Value of " + type + "s - " + faceValue * quantity;
-	}
+	// @Override
+	// public String toString() {
+	// 	return "Total Value of " + type + "s - " + faceValue * quantity;
+	// }
 }
 
 // Each element in the collection contains

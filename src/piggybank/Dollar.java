@@ -22,4 +22,9 @@ public class Dollar extends AbstractMoney {
 	public double getFaceValue() {
 		return faceValue;
 	}
+
+	@Override
+	public String toString() {
+		return "$" + quantity;
+	}
 }
